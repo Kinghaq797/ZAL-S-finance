@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAL'S | Personal Finance Officer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-blue-900">ZAL'S</span>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:space-x-8">
+                    <a href="#home" class="border-blue-500 text-blue-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                    <a href="#services" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Services</a>
+                    <a href="#crypto" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Crypto</a>
+                    <a href="#forex" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Forex</a>
+                    <a href="#stocks" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Stocks</a>
+                    <a href="#contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#home" class="bg-blue-50 border-blue-500 text-blue-900 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                <a href="#services" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Services</a>
+                <a href="#crypto" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Crypto</a>
+                <a href="#forex" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Forex</a>
+                <a href="#stocks" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Stocks</a>
+                <a href="#contact" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Strategic Financial Solutions with <span class="text-blue-200">ZAL'S</span></h1>
+                    <p class="text-lg md:text-xl mb-8 text-blue-100">Expert personal finance officer specializing in cryptocurrency, forex, data analysis, and stock exchange markets.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-medium hover:bg-blue-100 transition duration-300">Get Started</a>
+                        <a href="#services" class="border border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-blue-900 transition duration-300">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 sm:w-80 sm:h-80">
+                        <div class="absolute inset-0 bg-white bg-opacity-20 rounded-full blur-xl"></div>
+                        <div class="relative flex items-center justify-center w-full h-full">
+                            <img src="https://img.icons8.com/ios-filled/150/1e3a8a/financial-growth-analytics.png" class="w-64 h-64 floating" alt="Finance Analytics">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Our Specialized Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Tailored financial solutions designed to maximize your investments across diverse markets.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Crypto Service -->
+                <a href="crypto.html" class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300 card-hover border-t-4 border-blue-500 block hover:no-underline">
+                    <div class="service-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <i class="fab fa-bitcoin text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-3">Cryptocurrency</h3>
+                    <p class="text-gray-600 text-center">Expert analysis and strategic investment in leading cryptocurrencies and blockchain technologies.</p>
+                </a>
+                
+                <!-- Forex Service -->
+                <a href="#forex" class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300 card-hover border-t-4 border-blue-500 block hover:no-underline">
+                    <div class="service-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-exchange-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-3">Forex Trading</h3>
+                    <p class="text-gray-600 text-center">Professional currency trading with real-time market analysis and risk management strategies.</p>
+                </a>
+                
+                <!-- Data Analysis -->
+                <a href="#services" class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300 card-hover border-t-4 border-blue-500 block hover:no-underline">
+                    <div class="service-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-3">Data Analysis</h3>
+                    <p class="text-gray-600 text-center">Advanced financial data analytics to uncover hidden opportunities and optimize your portfolio.</p>
+                </a>
+                
+                <!-- Stocks -->
+                <a href="#stocks" class="service-card bg-white p-6 rounded-xl shadow-md transition duration-300 card-hover border-t-4 border-blue-500 block hover:no-underline">
+                    <div class="service-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <i class="fas fa-chart-bar text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-gray-800 mb-3">Stock Exchange</h3>
+                    <p class="text-gray-600 text-center">Comprehensive stock market strategies with personalized investment recommendations.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crypto Section -->
+    <section id="crypto" class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Cryptocurrency Investment Strategies</h2>
+                    <p class="text-gray-600 mb-6">Navigate the volatile crypto markets with confidence using our data-driven approach to digital asset investments.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Portfolio diversification across major cryptocurrencies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Technical and fundamental analysis of blockchain projects</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Risk assessment and management strategies</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700">Tax optimization for crypto gains</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 inline-flex items-center">
+                            Ask About Crypto Services
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Current Crypto Market Snapshot</h3>
+                        <div id="crypto-snapshot" class="space-y-4">
+                            <div class="text-center text-gray-400">Loading live data...</div>
+                        </div>
+                        <div class="mt-6 bg-blue-50 p-3 rounded-lg">
+                            <p class="text-sm text-blue-800 text-center">Data updates every 5 minutes. Past performance is not indicative of future results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forex Section -->
+    <section id="forex" class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center flex-row-reverse">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pl-10">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Foreign Exchange Expertise</h2>
+                    <p class="text-gray-600 mb-6">Maximize your currency trading potential with our comprehensive forex strategies and real-time market insights.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6" id="forex-snapshot">
+                        <div class="bg-blue-50 p-4 rounded-lg text-center col-span-2">
+                            <span class="text-gray-400">Loading live forex data...</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300 inline-flex items-center">
+                            Learn Forex Strategies
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">Forex Market Advantages</h3>
+                        <div class="space-y-5">
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-blue-500 mr-4">
+                                    <i class="fas fa-clock text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">24/5 Market Access</h4>
+                                    <p class="text-gray-600 mt-1">Trade major currency pairs around the clock during market hours.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-blue-500 mr-4">
+                                    <i class="fas fa-chart-pie text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Leverage Management</h4>
+                                    <p class="text-gray-600 mt-1">Strategic use of leverage to amplify potential gains while managing risk.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0 text-blue-500 mr-4">
+                                    <i class="fas fa-shield-alt text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Hedging Strategies</h4>
+                                    <p class="text-gray-600 mt-1">Protect against adverse currency movements with sophisticated hedging techniques.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stocks Section -->
+    <section id="stocks" class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Stock Market Intelligence</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive stock analysis combining technical indicators, fundamental analysis, and market sentiment to identify high-potential investments.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-search-dollar text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Fundamental Analysis</h3>
+                    <p class="text-gray-600">In-depth evaluation of company financials, management teams, and competitive advantages to assess long-term value.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-wave-square text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Technical Analysis</h3>
+                    <p class="text-gray-600">Chart pattern recognition, support/resistance levels, and indicator analysis to identify optimal entry and exit points.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-blue-500 mb-4">
+                        <i class="fas fa-balance-scale text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sector Rotation</h3>
+                    <p class="text-gray-600">Strategic allocation across market sectors based on macroeconomic trends and business cycle positioning.</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-2/3 p-8">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">Featured Stock Analysis</h3>
+                        <div class="flex items-center mb-6">
+                            <div class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded-full mr-4">
+                                AAPL
+                            </div>
+                            <div class="text-2xl font-semibold text-gray-800">Apple Inc.</div>
+                            <div class="ml-auto text-green-500 font-bold">+1.8%</div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Our analysis suggests strong upside potential based on innovative product pipeline, services revenue growth, and consistent cash flow generation.</p>
+                        <div class="grid grid-cols-3 gap-4 mb-6">
+                            <div class="text-center">
+                                <div class="text-gray-500 text-sm">P/E Ratio</div>
+                                <div class="text-blue-900 font-bold">28.3</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-gray-500 text-sm">Dividend Yield</div>
+                                <div class="text-blue-900 font-bold">0.6%</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-gray-500 text-sm">52W Range</div>
+                                <div class="text-blue-900 font-bold">143 - 198</div>
+                            </div>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center text-blue-600 font-medium hover:text-blue-800">
+                            Get Full Analysis Report
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="md:w-1/3 bg-gradient-to-b from-blue-50 to-blue-100 flex items-center justify-center p-8">
+                        <img src="https://img.icons8.com/ios/200/1e3a8a/stock-market.png" alt="Stock Market Chart" class="w-full max-w-xs">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Analysis Section -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-6">Financial Data Analytics</h2>
+                    <p class="text-xl text-blue-100 mb-8">Transform raw market data into actionable investment intelligence with our cutting-edge analytics platform.</p>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-database text-blue-200"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold">Comprehensive Data Aggregation</h4>
+                        </div>
+                        <p class="text-blue-100 ml-12">Collecting and processing market data from multiple sources including exchanges, news APIs, and social sentiment indicators.</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-project-diagram text-blue-200"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold">Predictive Modeling</h4>
+                        </div>
+                        <p class="text-blue-100 ml-12">Advanced algorithms analyze historical patterns to forecast potential market movements.</p>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <div class="w-8 h-8 rounded-full bg-white bg-opacity-20 flex items-center justify-center mr-4">
+                                <i class="fas fa-chart-area text-blue-200"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold">Visualization Dashboards</h4>
+                        </div>
+                        <p class="text-blue-100 ml-12">Interactive tools to explore correlations, trends, and anomalies in financial data.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-16">
+                    <div class="bg-white bg-opacity-10 p-8 rounded-xl backdrop-blur-sm border border-white border-opacity-20">
+                        <h3 class="text-xl font-bold mb-6">Request Data Analysis</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-blue-100 mb-2" for="name">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-blue-100 mb-2" for="email">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-blue-100 mb-2" for="service">Service Interest</label>
+                                <select id="service" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                    <option>Crypto Analytics</option>
+                                    <option>Forex Patterns</option>
+                                    <option>Stock Screening</option>
+                                    <option>Portfolio Optimization</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-blue-100 mb-2" for="message">Specific Data Needs</label>
+                                <textarea id="message" rows="3" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-blue-900 px-6 py-3 rounded-lg font-bold hover:bg-blue-100 transition duration-300">
+                                Request Analysis
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Client Experiences</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hear from investors who've achieved their financial goals with ZAL'S strategic guidance.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mr-4" alt="Sarah J.">
+                        <div>
+                            <h4 class="font-semibold">Sarah J.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"ZAL'S cryptocurrency analysis helped me navigate the 2022 bear market with minimal losses. Their risk management strategies are exceptional."</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full mr-4" alt="Michael T.">
+                        <div>
+                            <h4 class="font-semibold">Michael T.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The forex trading signals from ZAL'S have consistently improved my trading performance. Their attention to global macroeconomic factors is impressive."</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full mr-4" alt="Priya K.">
+                        <div>
+                            <h4 class="font-semibold">Priya K.</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"As a data-driven investor, I appreciate ZAL'S rigorous analytical approach. Their stock screening methodologies have helped me outperform the S&P 500."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-6">Connect With ZAL'S</h2>
+                    <p class="text-gray-600 mb-8">Ready to elevate your investment strategy? Contact us for a personalized consultation.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Office Location</h4>
+                                <p class="text-gray-600">123 Financial District, Suite 500<br>New York, NY 10005</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Email Us</h4>
+                                <p class="text-gray-600">info@zalsfinance.com<br>support@zalsfinance.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Call Us</h4>
+                                <p class="text-gray-600">+1 (212) 555-0100<br>Mon-Fri, 9am-5pm EST</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition duration-300">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold text-blue-900 mb-6">Send a Message</h3>
+                        <form>
+                            <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="first-name">First Name</label>
+                                    <input type="text" id="first-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-700 mb-2" for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email-contact">Email Address</label>
+                                <input type="email" id="email-contact" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="subject">Subject</label>
+                                <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option>General Inquiry</option>
+                                    <option>Crypto Consultation</option>
+                                    <option>Forex Learning</option>
+                                    <option>Stock Portfolio Review</option>
+                                    <option>Data Analysis Request</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label class="block text-gray-700 mb-2" for="message-contact">Message</label>
+                                <textarea id="message-contact" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">ZAL'S</h3>
+                    <p class="text-blue-200 max-w-xs">Strategic financial solutions for cryptocurrency, forex, data analysis, and stock exchange markets.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#crypto" class="text-blue-200 hover:text-white transition duration-300">Cryptocurrency</a></li>
+                            <li><a href="#forex" class="text-blue-200 hover:text-white transition duration-300">Forex Trading</a></li>
+                            <li><a href="#stocks" class="text-blue-200 hover:text-white transition duration-300">Stock Exchange</a></li>
+                            <li><a href="#services" class="text-blue-200 hover:text-white transition duration-300">Data Analysis</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-blue-200 hover:text-white transition duration-300">About Us</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white transition duration-300">Careers</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white transition duration-300">Blog</a></li>
+                            <li><a href="#contact" class="text-blue-200 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-blue-200 hover:text-white transition duration-300">Privacy Policy</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white transition duration-300">Terms of Service</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white transition duration-300">Risk Disclosure</a></li>
+                            <li><a href="#" class="text-blue-200 hover:text-white transition duration-300">Regulatory Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-blue-200 mb-4 md:mb-0">© 2023 ZAL'S Financial. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-blue-200 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-blue-200 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle icon between bars and times
+            const icon = mobileMenuButton.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuButton.querySelector('i').classList.remove('fa-times');
+                        mobileMenuButton.querySelector('i').classList.add('fa-bars');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+        
+        // Animate elements when they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.service-card, [data-animate]').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Live Crypto Snapshot using CoinGecko API
+        async function fetchCryptoSnapshot() {
+            const coins = [
+                { id: 'bitcoin', name: 'Bitcoin (BTC)', icon: 'fab fa-bitcoin text-orange-500' },
+                { id: 'ethereum', name: 'Ethereum (ETH)', icon: 'fab fa-ethereum text-purple-500' },
+                { id: 'solana', name: 'Solana (SOL)', icon: 'fas fa-dollar-sign text-blue-500' },
+                { id: 'cardano', name: 'Cardano (ADA)', icon: 'fas fa-chart-pie text-teal-500' },
+                { id: 'polkadot', name: 'Polkadot (DOT)', icon: 'fas fa-globe text-yellow-500' }
+            ];
+            const ids = coins.map(c => c.id).join(',');
+            try {
+                const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_24hr_change=true`);
+                const data = await res.json();
+                const snapshot = coins.map(c => {
+                    const price = data[c.id]?.usd?.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) ?? 'N/A';
+                    const change = data[c.id]?.usd_24h_change ?? 0;
+                    const changeClass = change >= 0 ? 'text-green-500' : 'text-red-500';
+                    const changeStr = (change >= 0 ? '+' : '') + change.toFixed(2) + '%';
+                    return `
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <div class="flex items-center">
+                                <i class="${c.icon} text-xl mr-3"></i>
+                                <span>${c.name}</span>
+                            </div>
+                            <div class="text-gray-800 font-medium mr-4">$${price}</div>
+                            <div class="${changeClass} font-medium">${changeStr}</div>
+                        </div>
+                    `;
+                }).join('');
+                document.getElementById('crypto-snapshot').innerHTML = snapshot;
+            } catch (e) {
+                document.getElementById('crypto-snapshot').innerHTML = '<div class="text-red-500 text-center">Failed to load live data.</div>';
+            }
+        }
+        fetchCryptoSnapshot();
+        setInterval(fetchCryptoSnapshot, 300000); // Update every 5 minutes
+
+        // Live Forex Snapshot using Frankfurter.app (not previously suggested)
+        async function fetchForexSnapshot() {
+            const pairs = [
+                { base: 'EUR', quote: 'USD', label: 'EUR/USD' },
+                { base: 'GBP', quote: 'USD', label: 'GBP/USD' },
+                { base: 'USD', quote: 'JPY', label: 'USD/JPY' },
+                { base: 'AUD', quote: 'USD', label: 'AUD/USD' }
+            ];
+            try {
+                // Frankfurter only supports EUR as base, so fetch all rates with EUR as base
+                const res = await fetch('https://api.frankfurter.app/latest?from=EUR&to=USD,GBP,JPY,AUD');
+                const data = await res.json();
+
+                // Helper to get USD/EUR rate for cross calculations
+                const usdPerEur = data.rates['USD'];
+                const gbpPerEur = data.rates['GBP'];
+                const jpyPerEur = data.rates['JPY'];
+                const audPerEur = data.rates['AUD'];
+
+                const snapshot = pairs.map(pair => {
+                    let rate = 'N/A';
+                    if (pair.base === 'EUR' && pair.quote === 'USD') {
+                        rate = usdPerEur.toFixed(4);
+                    } else if (pair.base === 'GBP' && pair.quote === 'USD') {
+                        // GBP/USD = (USD/EUR) / (GBP/EUR)
+                        rate = (usdPerEur / gbpPerEur).toFixed(4);
+                    } else if (pair.base === 'USD' && pair.quote === 'JPY') {
+                        // USD/JPY = (JPY/EUR) / (USD/EUR)
+                        rate = (jpyPerEur / usdPerEur).toFixed(4);
+                    } else if (pair.base === 'AUD' && pair.quote === 'USD') {
+                        // AUD/USD = (USD/EUR) / (AUD/EUR)
+                        rate = (usdPerEur / audPerEur).toFixed(4);
+                    }
+                    return `
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <div class="text-blue-800 font-medium mb-1">${pair.label}</div>
+                            <div class="text-gray-700">${rate}</div>
+                        </div>
+                    `;
+                }).join('');
+                document.getElementById('forex-snapshot').innerHTML = snapshot;
+            } catch (e) {
+                document.getElementById('forex-snapshot').innerHTML = '<div class="col-span-2 text-center text-red-500">Failed to load live forex data.</div>';
+            }
+        }
+        fetchForexSnapshot();
+        setInterval(fetchForexSnapshot, 300000); // Update every 5 minutes
+    </script>
+</body>
+</html>
