@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zalsfinance | Market Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#3B82F6',
+                        accent: '#60A5FA',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+        }
+        
+        .crypto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.1), 0 10px 10px -5px rgba(30, 58, 138, 0.04);
+        }
+        
+        .animated-bg {
+            animation: gradient 15s ease infinite;
+            background-size: 200% 200%;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fab fa-bitcoin text-2xl text-yellow-500"></i>
+                <h1 class="text-xl font-bold text-primary">ZAL'S</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#market" class="font-medium hover:text-secondary transition">Market</a>
+                <a href="#analysis" class="font-medium hover:text-secondary transition">Analysis</a>
+                <a href="#news" class="font-medium hover:text-secondary transition">News</a>
+                <a href="#watchlist" class="font-medium hover:text-secondary transition">Watchlist</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Crypto Market Intelligence</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Real-time prices, comprehensive analysis, and everything you need to navigate the crypto market</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <input type="text" placeholder="Search cryptocurrencies..." class="px-6 py-3 rounded-lg w-full md:w-96 text-dark focus:outline-none focus:ring-2 focus:ring-white">
+                <button class="bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
+                    <i class="fas fa-search mr-2"></i> Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section id="market" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl font-bold text-primary">Market Overview</h2>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-500">Sort by:</span>
+                    <select class="bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                        <option>Market Cap</option>
+                        <option>Price</option>
+                        <option>24h Change</option>
+                        <option>24h Volume</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Market Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-coins text-2xl text-secondary mr-3"></i>
+                        <h3 class="font-semibold text-lg text-dark">Total Market Cap</h3>
+                    </div>
+                    <div class="flex items-baseline">
+                        <span class="text-3xl font-bold">$1.45T</span>
+                        <span class="ml-2 text-green-500 font-medium">+2.45%</span>
+                    </div>
+                    <p class="text-gray-500 mt-2">24h change</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-exchange-alt text-2xl text-secondary mr-3"></i>
+                        <h3 class="font-semibold text-lg text-dark">24h Volume</h3>
+                    </div>
+                    <div class="flex items-baseline">
+                        <span class="text-3xl font-bold">$48.7B</span>
+                        <span class="ml-2 text-green-500 font-medium">+12.8%</span>
+                    </div>
+                    <p class="text-gray-500 mt-2">vs yesterday</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-pie text-2xl text-secondary mr-3"></i>
+                        <h3 class="font-semibold text-lg text-dark">BTC Dominance</h3>
+                    </div>
+                    <div class="flex items-baseline">
+                        <span class="text-3xl font-bold">46.3%</span>
+                        <span class="ml-2 text-red-500 font-medium">-0.8%</span>
+                    </div>
+                    <p class="text-gray-500 mt-2">vs yesterday</p>
+                </div>
+            </div>
+            
+            <!-- Crypto Table -->
+            <div class="overflow-x-auto bg-white rounded-xl shadow-sm border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-blue-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">#</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">Price</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">24h %</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">7d %</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">Market Cap</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">Volume(24h)</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">Last 7 Days</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Bitcoin -->
+                        <tr class="hover:bg-blue-50 transition">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="h-6 w-6 mr-3">
+                                    <span class="font-medium">Bitcoin</span>
+                                    <span class="ml-2 text-gray-500">BTC</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$41,278.42</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+3.24%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+12.45%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$801.5B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$18.7B</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="h-8 w-24">
+                                    <canvas id="btcChart" class="w-full h-full"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Ethereum -->
+                        <tr class="hover:bg-blue-50 transition">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="h-6 w-6 mr-3">
+                                    <span class="font-medium">Ethereum</span>
+                                    <span class="ml-2 text-gray-500">ETH</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$2,487.65</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+5.17%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+18.32%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$298.7B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$9.3B</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="h-8 w-24">
+                                    <canvas id="ethChart" class="w-full h-full"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Binance Coin -->
+                        <tr class="hover:bg-blue-50 transition">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB" class="h-6 w-6 mr-3">
+                                    <span class="font-medium">BNB</span>
+                                    <span class="ml-2 text-gray-500">BNB</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$312.45</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-medium">-1.26%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+6.89%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$48.2B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$1.5B</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="h-8 w-24">
+                                    <canvas id="bnbChart" class="w-full h-full"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Solana -->
+                        <tr class="hover:bg-blue-50 transition">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="h-6 w-6 mr-3">
+                                    <span class="font-medium">Solana</span>
+                                    <span class="ml-2 text-gray-500">SOL</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$108.76</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+7.82%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+24.65%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$45.3B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$2.1B</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="h-8 w-24">
+                                    <canvas id="solChart" class="w-full h-full"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- XRP -->
+                        <tr class="hover:bg-blue-50 transition">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/xrp-xrp-logo.png" alt="XRP" class="h-6 w-6 mr-3">
+                                    <span class="font-medium">XRP</span>
+                                    <span class="ml-2 text-gray-500">XRP</span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$0.5762</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+1.45%</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-medium">-2.16%</td>
+                            <td class="px-6 py-4 whitespace-nowrapp text-sm">$30.9B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">$0.9B</td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                <div class="h-8 w-24">
+                                    <canvas id="xrpChart" class="w-full h-full"></canvas>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-6 text-center">
+                <button class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-secondary transition">
+                    View All Cryptocurrencies
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis -->
+    <section id="analysis" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-primary mb-10 text-center">Market Analysis</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Bitcoin Dominance Chart -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-dark">Bitcoin Dominance</h3>
+                        <div class="flex items-center">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">30D</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">90D</span>
+                        </div>
+                    </div>
+                    <div class="h-64">
+                        <canvas id="btcDominanceChart"></canvas>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-600">Bitcoin's dominance has been gradually decreasing as altcoins gain market share, currently at 46.3% of total crypto market cap.</p>
+                    </div>
+                </div>
+                
+                <!-- Market Sentiment -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                    <h3 class="text-xl font-semibold text-dark mb-4">Market Sentiment</h3>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-green-500 mr-2"></span>
+                            <span>Bullish</span>
+                        </div>
+                        <span class="font-medium">64%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full mb-4">
+                        <div class="h-2 bg-green-500 rounded-full" style="width: 64%"></div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-red-500 mr-2"></span>
+                            <span>Bearish</span>
+                        </div>
+                        <span class="font-medium">19%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full mb-4">
+                        <div class="h-2 bg-red-500 rounded-full" style="width: 19%"></div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <span class="w-3 h-3 rounded-full bg-gray-400 mr-2"></span>
+                            <span>Neutral</span>
+                        </div>
+                        <span class="font-medium">17%</span>
+                    </div>
+                    <div class="h-2 w-full bg-gray-200 rounded-full mb-6">
+                        <div class="h-2 bg-gray-400 rounded-full" style="width: 17%"></div>
+                    </div>
+                    
+                    <p class="text-gray-600">The market sentiment is currently bullish with most investors expecting continued growth in the coming weeks.</p>
+                </div>
+            </div>
+            
+            <!-- Sector Performance -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 mb-12">
+                <h3 class="text-xl font-semibold text-dark mb-6">Sector Performance (7 Days)</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div>
+                        <div class="p-4 bg-blue-50 rounded-lg flex items-center justify-between">
+                            <div>
+                                <h4 class="font-medium text-dark">DeFi</h4>
+                                <span class="text-green-500 font-medium">+12.5%</span>
+                            </div>
+                            <i class="fas fa-chart-line text-2xl text-secondary"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="p-4 bg-blue-50 rounded-lg flex items-center justify-between">
+                            <div>
+                                <h4 class="font-medium text-dark">NFTs</h4>
+                                <span class="text-green-500 font-medium">+8.7%</span>
+                            </div>
+                            <i class="fas fa-palette text-2xl text-secondary"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="p-4 bg-blue-50 rounded-lg flex items-center justify-between">
+                            <div>
+                                <h4 class="font-medium text-dark">Layer 1</h4>
+                                <span class="text-green-500 font-medium">+15.3%</span>
+                            </div>
+                            <i class="fas fa-layer-group text-2xl text-secondary"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="p-4 bg-blue-50 rounded-lg flex items-center justify-between">
+                            <div>
+                                <h4 class="font-medium text-dark">Gaming</h4>
+                                <span class="text-green-500 font-medium">+5.9%</span>
+                            </div>
+                            <i class="fas fa-gamepad text-2xl text-secondary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured Analysis -->
+            <div>
+                <h3 class="text-xl font-semibold text-dark mb-6">Featured Market Analysis</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 crypto-card transition">
+                        <div class="h-40 bg-gradient-to-r from-accent to-secondary rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-bitcoin text-5xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-dark mb-2">Bitcoin Halving Impact Analysis</h4>
+                        <p class="text-gray-600 mb-4">Analyzing historical trends and potential impacts of the upcoming Bitcoin halving event on market dynamics.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline">Read Analysis →</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 crypto-card transition">
+                        <div class="h-40 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fab fa-ethereum text-5xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-dark mb-2">Ethereum Dencun Upgrade</h4>
+                        <p class="text-gray-600 mb-4">How the upcoming Dencun upgrade with proto-danksharding will affect Ethereum's scalability and gas fees.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline">Read Analysis →</a>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 crypto-card transition">
+                        <div class="h-40 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg mb-4 flex items-center justify-center">
+                            <i class="fas fa-coins text-5xl text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-lg text-dark mb-2">Institutional Adoption Trends</h4>
+                        <p class="text-gray-600 mb-4">Examining how institutional money is flowing into crypto and what assets are seeing the most interest.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline">Read Analysis →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crypto News -->
+    <section id="news" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl font-bold text-primary">Latest Crypto News</h2>
+                <a href="#" class="text-secondary font-medium hover:underline">View All News →</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                    <div class="h-48 bg-blue-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop" alt="BTC ETF" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Today</span>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-dark mb-3">SEC Expected to Approve Multiple Bitcoin ETFs by January</h3>
+                        <p class="text-gray-600 mb-4">Industry insiders suggest the SEC is preparing to greenlight several spot Bitcoin ETF applications, potentially triggering a new bull run.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline">Read Full Story →</a>
+                    </div>
+                </div>
+                
+                <!-- News Card 2 -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                    <div class="h-48 bg-blue-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516245834210-c4c142a33d0f?q=80&w=2592&auto=format&fit=crop" alt="Ethereum" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>3 hours ago</span>
+                            <span class="mx-2">•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-dark mb-3">Ethereum Developers Announce Timeline for Next Upgrade</h3>
+                        <p class="text-gray-600 mb-4">The Ethereum core team has released a tentative schedule for the Prague/Electra upgrade, focusing on validator economics and scaling.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline">Read Full Story →</a>
+                    </div>
+                </div>
+                
+                <!-- News Card 3 -->
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                    <div class="h-48 bg-blue-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618397360793-cab1d7fb86b2?q=80&w=2670&auto=format&fit=crop" alt="CBDC" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
+                            <span>Yesterday</span>
+                            <span class="mx-2">•</span>
+                            <span>6 min read</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-dark mb-3">14 Major Economies Enter Final Stage of CBDC Development</h3>
+                        <p class="text-gray-600 mb-4">A new BIS report reveals significant progress in central bank digital currencies, with several countries preparing for pilot launches in 2024.</p>
+                        <a href="#" class="text-secondary font-medium hover:underline">Read Full Story →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watchlist & Newsletter -->
+    <section id="watchlist" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Watchlist -->
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-8">Your Watchlist</h2>
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="font-semibold text-lg">Tracked Assets</h3>
+                            <button class="text-secondary hover:underline">Edit</button>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Watchlist Item 1 -->
+                            <div class="flex items-center justify-between p-3 hover:bg-blue-50 rounded-lg transition">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="h-8 w-8 mr-3">
+                                    <div>
+                                        <h4 class="font-medium">Bitcoin</h4>
+                                        <span class="text-gray-500 text-sm">BTC</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-medium">$41,278.42</div>
+                                    <div class="text-green-500 text-sm">+3.24%</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Watchlist Item 2 -->
+                            <div class="flex items-center justify-between p-3 hover:bg-blue-50 rounded-lg transition">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="h-8 w-8 mr-3">
+                                    <div>
+                                        <h4 class="font-medium">Ethereum</h4>
+                                        <span class="text-gray-500 text-sm">ETH</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-medium">$2,487.65</div>
+                                    <div class="text-green-500 text-sm">+5.17%</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Watchlist Item 3 -->
+                            <div class="flex items-center justify-between p-3 hover:bg-blue-50 rounded-lg transition">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="h-8 w-8 mr-3">
+                                    <div>
+                                        <h4 class="font-medium">Solana</h4>
+                                        <span class="text-gray-500 text-sm">SOL</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-medium">$108.76</div>
+                                    <div class="text-green-500 text-sm">+7.82%</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Watchlist Item 4 -->
+                            <div class="flex items-center justify-between p-3 hover:bg-blue-50 rounded-lg transition">
+                                <div class="flex items-center">
+                                    <img src="https://cryptologos.cc/logos/polkadot-new-dot-logo.png" alt="Polkadot" class="h-8 w-8 mr-3">
+                                    <div>
+                                        <h4 class="font-medium">Polkadot</h4>
+                                        <span class="text-gray-500 text-sm">DOT</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-medium">$7.32</div>
+                                    <div class="text-red-500 text-sm">-1.45%</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full mt-6 bg-secondary text-white py-2 rounded-lg font-medium hover:bg-primary transition">
+                            + Add More Assets
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-8">Stay Updated</h2>
+                    <div class="bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-4">CryptoSphere Newsletter</h3>
+                        <p class="mb-6">Get weekly insights, market analysis, and breaking crypto news delivered straight to your inbox.</p>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white" placeholder="your@email.com">
+                            </div>
+                            <div class="flex items-center">
+                                <input id="terms" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary">
+                                <label for="terms" class="ml-2 block text-sm">I agree to receive emails and accept the privacy policy</label>
+                            </div>
+                            <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-opacity-90 transition">
+                                Subscribe Now
+                            </button>
+                        </form>
+                        
+                        <div class="mt-6 flex space-x-4">
+                            <div class="flex-1 bg-white bg-opacity-10 p-3 rounded-lg">
+                                <div class="text-2xl font-bold">45k+</div>
+                                <div class="text-sm opacity-80">Subscribers</div>
+                            </div>
+                            <div class="flex-1 bg-white bg-opacity-10 p-3 rounded-lg">
+                                <div class="text-2xl font-bold">99%</div>
+                                <div class="text-sm opacity-80">Open Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fab fa-bitcoin text-2xl text-yellow-500"></i>
+                        <h3 class="text-xl font-bold">CryptoSphere</h3>
+                    </div>
+                    <p class="text-gray-400">Providing comprehensive crypto market data, analysis, and insights to help you navigate digital assets.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Market</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cryptocurrencies</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Exchanges</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Market Cap</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">NFTs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">DeFi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Research</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Glossary</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">APIs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Widgets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Advertise</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 CryptoSphere. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Cookies</a>
+
+</body>
+</html>
