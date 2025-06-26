@@ -6,6 +6,7 @@
     <title>zalsfinance | Market Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script>
         tailwind.config = {
             theme: {
@@ -62,7 +63,7 @@
                 <a href="#analysis" class="font-medium hover:text-secondary transition">Analysis</a>
                 <a href="#news" class="font-medium hover:text-secondary transition">News</a>
                 <a href="#watchlist" class="font-medium hover:text-secondary transition">Watchlist</a>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -71,12 +72,6 @@
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Crypto Market Intelligence</h1>
             <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Real-time prices, comprehensive analysis, and everything you need to navigate the crypto market</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <input type="text" placeholder="Search cryptocurrencies..." class="px-6 py-3 rounded-lg w-full md:w-96 text-dark focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-primary font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition">
-                    <i class="fas fa-search mr-2"></i> Search
-                </button>
-            </div>
         </div>
     </section>
 
@@ -154,16 +149,25 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="Bitcoin" class="h-6 w-6 mr-3">
+                                    <img src="asset/bitcoin.png" alt="XRP" class="h-6 w-6 mr-3">
                                     <span class="font-medium">Bitcoin</span>
                                     <span class="ml-2 text-gray-500">BTC</span>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$41,278.42</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+3.24%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+12.45%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm">$801.5B</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm">$18.7B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium" id="btc-price">Loading...</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">
+                             <span id="1"></span> <!-- 24h change % -->
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">
+                             <span id="2"></span> <!-- 7d change % -->
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                             <span id="3"></span> <!-- Market Cap -->
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                             <span id="4"></span> <!-- 24h Volume -->
+                            </td>
+
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="h-8 w-24">
                                     <canvas id="btcChart" class="w-full h-full"></canvas>
@@ -175,16 +179,24 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="Ethereum" class="h-6 w-6 mr-3">
-                                    <span class="font-medium">Ethereum</span>
+                                    <img src="asset/etherium.png" alt="XRP" class="h-6 w-6 mr-3">
+                                    <span class="font-medium">Eterium</span>
                                     <span class="ml-2 text-gray-500">ETH</span>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$2,487.65</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+5.17%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+18.32%</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm">$298.7B</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm">$9.3B</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium" id="eth-price">Loading...</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">
+                             <span id="4"></span> <!-- 24h change % -->
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">
+                             <span id="5"></span> <!-- 7d change % -->
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                             <span id="6"></span> <!-- Market Cap -->
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm">
+                             <span id="8"></span> <!-- 24h Volume -->
+                            </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="h-8 w-24">
                                     <canvas id="ethChart" class="w-full h-full"></canvas>
@@ -196,12 +208,12 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="BNB" class="h-6 w-6 mr-3">
+                                    <img src="asset/bnb.png" alt="BNB" class="h-6 w-6 mr-3">
                                     <span class="font-medium">BNB</span>
                                     <span class="ml-2 text-gray-500">BNB</span>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$312.45</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium" id="bnb-price">$312.45</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-medium">-1.26%</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+6.89%</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm">$48.2B</td>
@@ -217,12 +229,12 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <img src="https://cryptologos.cc/logos/solana-sol-logo.png" alt="Solana" class="h-6 w-6 mr-3">
+                                    <img src="asset/solana.png" alt="Solana" class="h-6 w-6 mr-3">
                                     <span class="font-medium">Solana</span>
                                     <span class="ml-2 text-gray-500">SOL</span>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$108.76</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium" id="sol-price">$108.76</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+7.82%</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+24.65%</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm">$45.3B</td>
@@ -238,12 +250,12 @@
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="flex items-center">
-                                    <img src="https://cryptologos.cc/logos/xrp-xrp-logo.png" alt="XRP" class="h-6 w-6 mr-3">
+                                    <img src="asset/xrp.png" alt="XRP" class="h-6 w-6 mr-3">
                                     <span class="font-medium">XRP</span>
                                     <span class="ml-2 text-gray-500">XRP</span>
                                 </div>
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">$0.5762</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium" id="xrp-price">$0.5762</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-green-500 font-medium">+1.45%</td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-red-500 font-medium">-2.16%</td>
                             <td class="px-6 py-4 whitespace-nowrapp text-sm">$30.9B</td>
@@ -639,6 +651,376 @@
                     <a href="#" class="text-gray-400 hover:text-white">Terms</a>
                     <a href="#" class="text-gray-400 hover:text-white">Privacy</a>
                     <a href="#" class="text-gray-400 hover:text-white">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample data for charts
+        const btcDominanceData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+            datasets: [{
+                label: 'Bitcoin Dominance',
+                data: [65, 63, 60, 58, 57, 55, 54],
+                backgroundColor: 'rgba(99, 102, 241, 0.5)',
+                borderColor: 'rgba(99, 102, 241, 1)',
+                borderWidth: 2,
+                fill: true,
+            }],
+        };
+
+        const ctx = document.getElementById('btcDominanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: btcDominanceData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                        },
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(229, 231, 235, 1)',
+                        },
+                    },
+                },
+            },
+        });
+    </script>
+    <script src="https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd"></script>
+    <script>
+        import React, { useEffect, useState } from 'react';
+
+        function CryptoPage() {
+          const [cryptoData, setCryptoData] = useState([]);
+          const [loading, setLoading] = useState(true);
+
+          useEffect(() => {
+            fetch('https://api.coincap.io/v2/assets?limit=10')
+              .then(res => res.json())
+              .then(data => {
+                setCryptoData(data.data);
+                setLoading(false);
+              })
+              .catch(() => setLoading(false));
+          }, []);
+
+          if (loading) return <div>Loading...</div>;
+
+          return (
+            <div className="crypto-page active">
+              <h1>Crypto Market Overview</h1>
+              <MarketSection />
+              {/* ...other sections... */}
+            </div>
+          );
+        }
+
+        export default CryptoPage;
+    </script>
+    <script>
+        import React, { useEffect, useState } from 'react';
+
+        function MarketSection() {
+          const [marketData, setMarketData] = useState([]);
+          const [loading, setLoading] = useState(true);
+          const [limit, setLimit] = useState(5);
+          const [currency, setCurrency] = useState('usd');
+
+          useEffect(() => {
+            let intervalId;
+
+            const fetchMarketData = () => {
+              fetch(`https://api.coincap.io/v2/assets?limit=${limit}`)
+                .then(res => res.json())
+                .then(data => {
+                  setMarketData(data.data);
+                  setLoading(false);
+                })
+                .catch(() => setLoading(false));
+            };
+
+            fetchMarketData();
+            intervalId = setInterval(fetchMarketData, 5000);
+
+            return () => clearInterval(intervalId);
+          }, [limit]);
+
+          const handleLimitChange = (e) => {
+            setLimit(Number(e.target.value));
+            setLoading(true);
+          };
+
+          return (
+            <section className="market-section">
+              <h2>Live Market</h2>
+              <div style={{ marginBottom: '1em' }}>
+                <label>
+                  Show top&nbsp;
+                  <input
+                    type="number"
+                    min="1"
+                    max="50"
+                    value={limit}
+                    onChange={handleLimitChange}
+                    style={{ width: '60px' }}
+                  />
+                  &nbsp;assets
+                </label>
+              </div>
+              {loading ? (
+                <div>Loading market data...</div>
+              ) : (
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Name</th>
+                      <th>Symbol</th>
+                      <th>Price (USD)</th>
+                      <th>Change (24h)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {marketData.map(asset => (
+                      <tr key={asset.id}>
+                        <td>{asset.rank}</td>
+                        <td>{asset.name}</td>
+                        <td>{asset.symbol}</td>
+                        <td>${parseFloat(asset.priceUsd).toFixed(2)}</td>
+                        <td
+                          style={{
+                            color: parseFloat(asset.changePercent24Hr) >= 0 ? 'green' : 'red'
+                          }}
+                        >
+                          {parseFloat(asset.changePercent24Hr).toFixed(2)}%
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </section>
+          );
+        }
+
+        export default MarketSection;
+    </script>
+    <script>
+        import React, { useEffect, useState } from 'react';
+
+        function MarketOverview() {
+          const [marketData, setMarketData] = useState([]);
+          const [loading, setLoading] = useState(true);
+
+          useEffect(() => {
+            let intervalId;
+
+            const fetchMarketData = () => {
+              fetch('https://api.coincap.io/v2/assets?limit=3')
+                .then(res => res.json())
+                .then(data => {
+                  setMarketData(data.data);
+                  setLoading(false);
+                })
+                .catch(() => setLoading(false));
+            };
+
+            fetchMarketData(); // Initial fetch
+            intervalId = setInterval(fetchMarketData, 5000); // Update every 5 seconds
+
+            return () => clearInterval(intervalId); // Cleanup on unmount
+          }, []);
+
+          if (loading) return <div>Loading market overview...</div>;
+
+          return (
+            <section className="market-overview">
+              <h2>Market Overview</h2>
+              <ul>
+                {marketData.map(asset => (
+                  <li key={asset.id}>
+                    <strong>{asset.name} ({asset.symbol}):</strong>
+                    &nbsp;${parseFloat(asset.priceUsd).toFixed(2)}
+                    &nbsp;
+                    <span style={{
+                      color: parseFloat(asset.changePercent24Hr) >= 0 ? 'green' : 'red'
+                    }}>
+                      {parseFloat(asset.changePercent24Hr).toFixed(2)}%
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        }
+
+        export default MarketOverview;
+    </script>
+    <script>
+function updateBTCPrice() {
+  fetch('https://blockchain.info/ticker')
+    .then(res => res.json())
+    .then(data => {
+      const price = parseFloat(data.USD.last).toFixed(2);
+      document.getElementById('btc-price').textContent = `$${price}`;
+    })
+    .catch(() => {
+      document.getElementById('btc-price').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateBTCPrice();
+// Update every 5 minutes (300,000 ms)
+setInterval(updateBTCPrice, 300000);
+</script>
+<script>
+function updateETHPrice() {
+  fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+    .then(res => res.json())
+    .then(data => {
+      const price = parseFloat(data.USD).toFixed(2);
+      document.getElementById('eth-price').textContent = `$${price}`;
+    })
+    .catch(() => {
+      document.getElementById('eth-price').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateETHPrice();
+// Update every 5 minutes (300,000 ms)
+setInterval(updateETHPrice, 300000);
+</script>
+<script>
+function updateBNBPrice() {
+  fetch('https://min-api.cryptocompare.com/data/price?fsym=BNB&tsyms=USD')
+    .then(res => res.json())
+    .then(data => {
+      const price = parseFloat(data.USD).toFixed(2);
+      document.getElementById('bnb-price').textContent = `$${price}`;
+    })
+    .catch(() => {
+      document.getElementById('bnb-price').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateBNBPrice();
+// Update every 5 minutes (300,000 ms)
+setInterval(updateBNBPrice, 300000);
+</script>
+<script>
+function updateSOLPrice() {
+  fetch('https://min-api.cryptocompare.com/data/price?fsym=SOL&tsyms=USD')
+    .then(res => res.json())
+    .then(data => {
+      const price = parseFloat(data.USD).toFixed(2);
+      document.getElementById('sol-price').textContent = `$${price}`;
+    })
+    .catch(() => {
+      document.getElementById('sol-price').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateSOLPrice();
+// Update every 5 minutes (300,000 ms)
+setInterval(updateSOLPrice, 300000);
+</script>
+<script>
+function updateXRPPrice() {
+  fetch('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD')
+    .then(res => res.json())
+    .then(data => {
+      const price = parseFloat(data.USD).toFixed(4);
+      document.getElementById('xrp-price').textContent = `$${price}`;
+    })
+    .catch(() => {
+      document.getElementById('xrp-price').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateXRPPrice();
+// Update every 5 minutes (300,000 ms)
+setInterval(updateXRPPrice, 300000);
+</script>
+<script>
+function updateBTCStats() {
+  fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD')
+    .then(res => res.json())
+    .then(data => {
+      const stats = data.RAW.BTC.USD;
+      // 24h change %
+      document.getElementById('1').textContent = 
+        stats.CHANGEPCT24HOUR !== undefined ? `${stats.CHANGEPCT24HOUR.toFixed(2)}%` : 'N/A';
+      // 7d change %
+      document.getElementById('2').textContent = 
+        stats.CHANGEPCTDAY7 !== undefined ? `${stats.CHANGEPCTDAY7.toFixed(2)}%` : 'N/A';
+      // Market Cap
+      document.getElementById('3').textContent = 
+        stats.MKTCAP !== undefined ? `$${Number(stats.MKTCAP).toLocaleString()}` : 'N/A';
+      // 24h Volume
+      document.getElementById('4').textContent = 
+        stats.VOLUME24HOURTO !== undefined ? `$${Number(stats.VOLUME24HOURTO).toLocaleString()}` : 'N/A';
+    })
+    .catch(() => {
+      document.getElementById('1').textContent = 'Error';
+      document.getElementById('2').textContent = 'Error';
+      document.getElementById('3').textContent = 'Error';
+      document.getElementById('4').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateBTCStats();
+// Update every 10 seconds for testing
+setInterval(updateBTCStats, 10000);
+</script>
+<script>
+function updateETHStats() {
+  fetch('https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD')
+    .then(res => res.json())
+    .then(data => {
+      const stats = data.RAW.ETH.USD;
+      // 24h change %
+      document.getElementById('4').textContent = 
+        stats.CHANGEPCT24HOUR !== undefined ? `${stats.CHANGEPCT24HOUR.toFixed(2)}%` : 'N/A';
+      // 7d change %
+      document.getElementById('5').textContent = 
+        stats.CHANGEPCTDAY7 !== undefined ? `${stats.CHANGEPCTDAY7.toFixed(2)}%` : 'N/A';
+      // Market Cap
+      document.getElementById('6').textContent = 
+        stats.MKTCAP !== undefined ? `$${Number(stats.MKTCAP).toLocaleString()}` : 'N/A';
+      // 24h Volume
+      document.getElementById('8').textContent = 
+        stats.VOLUME24HOURTO !== undefined ? `$${Number(stats.VOLUME24HOURTO).toLocaleString()}` : 'N/A';
+    })
+    .catch(() => {
+      document.getElementById('4').textContent = 'Error';
+      document.getElementById('5').textContent = 'Error';
+      document.getElementById('6').textContent = 'Error';
+      document.getElementById('8').textContent = 'Error';
+    });
+}
+
+// Initial fetch
+updateETHStats();
+// Update every 24 hours (86,400,000 ms)
+setInterval(updateETHStats, 86400000);
+</script>
 </body>
 </html>
